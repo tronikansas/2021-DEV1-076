@@ -42,6 +42,7 @@ class TennisGameTest {
       "4, 7, Impossible score according to the rules",
       "0, 1, love - fifteen",
       "2, 1, thirty - fifteen",
+      "3, 1, forty - fifteen",
       "5, 4, Advantage Nadal",
       "5, 6, Advantage Federer",
       "5, 7, Game over the winner is Federer",

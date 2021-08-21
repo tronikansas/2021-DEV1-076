@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class TennisGameTest {
 
@@ -30,14 +32,17 @@ class TennisGameTest {
     Assertions.assertEquals("Please, send a valid player", tennisGame.viewScore(playersList));
   }
 
-  @Test
-  public void testLoveAll(){
+  @ParameterizedTest
+  @CsvSource({
+      "0, 0, love all"
+  })
+  public void testScoreResults(int playerOneScore, int playerTwoScore, String messageExpected){
     TennisGame tennisGame = new TennisGame();
     List<Player> playersList = new ArrayList<Player>();
-    playersList.add(new Player("Rafael Nadal",0));
-    playersList.add(new Player("Roger Federer",0));
+    playersList.add(new Player("Rafael Nadal",playerOneScore));
+    playersList.add(new Player("Roger Federer",playerTwoScore));
 
-    Assertions.assertEquals("love all", tennisGame.viewScore(playersList));
+    Assertions.assertEquals(messageExpected, tennisGame.viewScore(playersList));
   }
 
   @Test

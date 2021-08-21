@@ -23,6 +23,12 @@ public class TennisGame {
     Player player2 = playerList.get(1);
     if(player1.getScore() == player2.getScore()){
       return player1.getScore() > 2? "deuce": setPoints.get(player1.getScore()) + " all";
+    }else{
+      if(player1.getScore() > 2 && player2.getScore() > 2){
+        if(Math.abs(player1.getScore() - player2.getScore()) > 2){
+          return "Impossible score according to the rules";
+        }
+      }
     }
     return "score  fail";
   }

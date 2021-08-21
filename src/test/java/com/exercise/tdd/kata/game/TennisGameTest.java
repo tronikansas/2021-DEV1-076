@@ -36,7 +36,8 @@ class TennisGameTest {
   @CsvSource({
       "0, 0, love all",
       "1, 1, fifteen all",
-      "2, 2, thirty all"
+      "2, 2, thirty all",
+      "3, 3, deuce"
   })
   public void testScoreResults(int playerOneScore, int playerTwoScore, String messageExpected){
     TennisGame tennisGame = new TennisGame();

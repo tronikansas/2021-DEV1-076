@@ -22,6 +22,8 @@ public class TennisGame {
         return "fifteen all";
       }else if(playerList.get(0).getScore() == 2){
         return "thirty all";
+      }else{
+        return "deuce";
       }
     }
     return "score  fail";

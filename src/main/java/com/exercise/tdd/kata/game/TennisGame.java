@@ -10,9 +10,14 @@ import org.springframework.stereotype.Controller;
 public class TennisGame {
 
   public String viewScore(List<Player> playerList){
+    if(playerList == null || playerList.size() != 2){
+      return "To start the Game we need 2 players"
+;   }
     if(playerList.get(0).getScore() == playerList.get(1).getScore()){
       if(playerList.get(0).getScore() == 0){
         return "love all";
+      }else if(playerList.get(0).getScore() == 15){
+        return "fifteen all";
       }
     }
     return "score  fail";

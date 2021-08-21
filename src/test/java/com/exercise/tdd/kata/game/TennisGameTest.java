@@ -11,6 +11,14 @@ import org.junit.jupiter.api.Test;
 
 class TennisGameTest {
 
+  @Test
+  public void testStartingAGameWithOnePlayer(){
+    TennisGame tennisGame = new TennisGame();
+    List<Player> playersList = new ArrayList<Player>();
+    playersList.add(new Player("Roger Federer",0));
+
+    Assertions.assertEquals("To start the Game we need 2 players", tennisGame.viewScore(playersList));
+  }
 
   @Test
   public void testLoveAll(){
@@ -20,5 +28,15 @@ class TennisGameTest {
     playersList.add(new Player("Roger Federer",0));
 
     Assertions.assertEquals("love all", tennisGame.viewScore(playersList));
+  }
+
+  @Test
+  public void fifteenAll(){
+    TennisGame tennisGame = new TennisGame();
+    List<Player> playersList = new ArrayList<Player>();
+    playersList.add(new Player("Rafael Nadal",15));
+    playersList.add(new Player("Roger Federer",15));
+
+    Assertions.assertEquals("fifteen all", tennisGame.viewScore(playersList));
   }
 }

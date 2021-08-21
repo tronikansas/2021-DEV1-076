@@ -11,29 +11,29 @@ import org.junit.jupiter.params.provider.CsvSource;
 class TennisGameTest {
 
   @Test
-  public void testStartingAGameWithOnePlayer(){
+  public void testStartingAGameWithOnePlayer() {
     TennisGame tennisGame = new TennisGame();
     List<Player> playersList = new ArrayList<Player>();
-    playersList.add(new Player("Roger Federer",0));
+    playersList.add(new Player("Roger Federer", 0));
 
     Assertions.assertEquals("To start the Game we need 2 players", tennisGame.viewScore(playersList));
   }
 
   @Test
-  public void testSendingANullPlayer(){
+  public void testSendingANullPlayer() {
     TennisGame tennisGame = new TennisGame();
     List<Player> playersList = new ArrayList<Player>();
-    playersList.add(new Player("Roger Federer",0));
+    playersList.add(new Player("Roger Federer", 0));
     playersList.add(null);
 
     Assertions.assertEquals("To start the Game we need 2 players", tennisGame.viewScore(playersList));
   }
 
   @Test
-  public void testSendingPlayerWithoutName(){
+  public void testSendingPlayerWithoutName() {
     TennisGame tennisGame = new TennisGame();
     List<Player> playersList = new ArrayList<Player>();
-    playersList.add(new Player("Roger Federer",0));
+    playersList.add(new Player("Roger Federer", 0));
     playersList.add(new Player());
 
     Assertions.assertEquals("The Players must have a name", tennisGame.viewScore(playersList));
@@ -54,11 +54,11 @@ class TennisGameTest {
       "6, 4, Game over the winner is Nadal",
       "1, 4, Game over the winner is Federer"
   })
-  public void testScoreResults(int playerOneScore, int playerTwoScore, String messageExpected){
+  public void testScoreResults(int playerOneScore, int playerTwoScore, String messageExpected) {
     TennisGame tennisGame = new TennisGame();
     List<Player> playersList = new ArrayList<Player>();
-    playersList.add(new Player("Nadal",playerOneScore));
-    playersList.add(new Player("Federer",playerTwoScore));
+    playersList.add(new Player("Nadal", playerOneScore));
+    playersList.add(new Player("Federer", playerTwoScore));
 
     Assertions.assertEquals(messageExpected, tennisGame.viewScore(playersList));
   }

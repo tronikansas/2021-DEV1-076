@@ -23,15 +23,15 @@ public class TennisGame {
 
     Player player1 = playerList.get(0);
     Player player2 = playerList.get(1);
-    if(player1.getName() == null || "".equals(player1.getName()) || player2.getName()== null || "".equals(player2.getName())){
+    if (player1.getName() == null || "".equals(player1.getName()) || player2.getName() == null || "".equals(player2.getName())) {
       return "The Players must have a name";
     }
-    if(player1.getScore() == player2.getScore()){
-      return player1.getScore() > 2 ? "deuce": setPoints.get(player1.getScore()) + " all";
-    }else{
-      if(Math.max(player1.getScore(), player2.getScore()) > 3){
+    if (player1.getScore() == player2.getScore()) {
+      return player1.getScore() > 2 ? "deuce" : setPoints.get(player1.getScore()) + " all";
+    } else {
+      if (Math.max(player1.getScore(), player2.getScore()) > 3) {
         return diffResult(player1, player2);
-      }else{
+      } else {
         return setPoints.get(player1.getScore()) + " - " + setPoints.get(player2.getScore());
       }
     }
@@ -39,10 +39,10 @@ public class TennisGame {
 
   private String diffResult(Player player1, Player player2) {
     int diff = Math.abs(player1.getScore() - player2.getScore());
-      return  (diff == 1 ? "Advantage " : "Game over the winner is ") + getPlayerWithHigherScore(player1, player2);
+    return (diff == 1 ? "Advantage " : "Game over the winner is ") + getPlayerWithHigherScore(player1, player2);
   }
 
   private String getPlayerWithHigherScore(Player player1, Player player2) {
-    return player1.getScore() > player2.getScore()? player1.getName(): player2.getName();
+    return player1.getScore() > player2.getScore() ? player1.getName() : player2.getName();
   }
 }

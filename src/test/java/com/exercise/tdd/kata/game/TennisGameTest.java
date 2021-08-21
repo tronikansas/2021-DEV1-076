@@ -34,7 +34,9 @@ class TennisGameTest {
 
   @ParameterizedTest
   @CsvSource({
-      "0, 0, love all"
+      "0, 0, love all",
+      "1, 1, fifteen all",
+      "2, 2, thirty all"
   })
   public void testScoreResults(int playerOneScore, int playerTwoScore, String messageExpected){
     TennisGame tennisGame = new TennisGame();
@@ -43,25 +45,5 @@ class TennisGameTest {
     playersList.add(new Player("Roger Federer",playerTwoScore));
 
     Assertions.assertEquals(messageExpected, tennisGame.viewScore(playersList));
-  }
-
-  @Test
-  public void testFifteenAll(){
-    TennisGame tennisGame = new TennisGame();
-    List<Player> playersList = new ArrayList<Player>();
-    playersList.add(new Player("Rafael Nadal",15));
-    playersList.add(new Player("Roger Federer",15));
-
-    Assertions.assertEquals("fifteen all", tennisGame.viewScore(playersList));
-  }
-
-  @Test
-  public void testThirtyAll(){
-    TennisGame tennisGame = new TennisGame();
-    List<Player> playersList = new ArrayList<Player>();
-    playersList.add(new Player("Rafael Nadal",30));
-    playersList.add(new Player("Roger Federer",30));
-
-    Assertions.assertEquals("thirty all", tennisGame.viewScore(playersList));
   }
 }

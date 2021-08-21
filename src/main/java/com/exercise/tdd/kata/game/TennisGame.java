@@ -18,9 +18,9 @@ public class TennisGame {
     if(playerList.get(0).getScore() == playerList.get(1).getScore()){
       if(playerList.get(0).getScore() == 0){
         return "love all";
-      }else if(playerList.get(0).getScore() == 15){
+      }else if(playerList.get(0).getScore() == 1){
         return "fifteen all";
-      }else if(playerList.get(0).getScore() == 30){
+      }else if(playerList.get(0).getScore() == 2){
         return "thirty all";
       }
     }

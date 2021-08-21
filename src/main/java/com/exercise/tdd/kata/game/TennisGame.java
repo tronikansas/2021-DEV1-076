@@ -39,11 +39,7 @@ public class TennisGame {
 
   private String diffResult(Player player1, Player player2) {
     int diff = Math.abs(player1.getScore() - player2.getScore());
-    if(diff > 2){
-      return "Impossible score according to the rules";
-    }else {
       return  (diff == 1 ? "Advantage " : "Game over the winner is ") + getPlayerWithHigherScore(player1, player2);
-    }
   }
 
   private String getPlayerWithHigherScore(Player player1, Player player2) {

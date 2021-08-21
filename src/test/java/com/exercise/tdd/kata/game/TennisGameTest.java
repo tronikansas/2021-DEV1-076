@@ -45,15 +45,14 @@ class TennisGameTest {
       "1, 1, fifteen all",
       "2, 2, thirty all",
       "3, 3, deuce",
-      "7, 4, Impossible score according to the rules",
-      "4, 7, Impossible score according to the rules",
       "0, 1, love - fifteen",
       "2, 1, thirty - fifteen",
       "3, 1, forty - fifteen",
       "5, 4, Advantage Nadal",
       "5, 6, Advantage Federer",
       "5, 7, Game over the winner is Federer",
-      "6, 4, Game over the winner is Nadal"
+      "6, 4, Game over the winner is Nadal",
+      "1, 4, Game over the winner is Federer"
   })
   public void testScoreResults(int playerOneScore, int playerTwoScore, String messageExpected){
     TennisGame tennisGame = new TennisGame();

@@ -20,6 +20,8 @@ public class TennisGame {
         return "love all";
       }else if(playerList.get(0).getScore() == 15){
         return "fifteen all";
+      }else if(playerList.get(0).getScore() == 30){
+        return "thirty all";
       }
     }
     return "score  fail";

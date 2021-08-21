@@ -41,12 +41,22 @@ class TennisGameTest {
   }
 
   @Test
-  public void fifteenAll(){
+  public void testFifteenAll(){
     TennisGame tennisGame = new TennisGame();
     List<Player> playersList = new ArrayList<Player>();
     playersList.add(new Player("Rafael Nadal",15));
     playersList.add(new Player("Roger Federer",15));
 
     Assertions.assertEquals("fifteen all", tennisGame.viewScore(playersList));
+  }
+
+  @Test
+  public void testThirtyAll(){
+    TennisGame tennisGame = new TennisGame();
+    List<Player> playersList = new ArrayList<Player>();
+    playersList.add(new Player("Rafael Nadal",30));
+    playersList.add(new Player("Roger Federer",30));
+
+    Assertions.assertEquals("thirty all", tennisGame.viewScore(playersList));
   }
 }

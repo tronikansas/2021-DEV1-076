@@ -21,6 +21,16 @@ class TennisGameTest {
   }
 
   @Test
+  public void testSendingANullPlayer(){
+    TennisGame tennisGame = new TennisGame();
+    List<Player> playersList = new ArrayList<Player>();
+    playersList.add(new Player("Roger Federer",0));
+    playersList.add(null);
+
+    Assertions.assertEquals("Please, send a valid player", tennisGame.viewScore(playersList));
+  }
+
+  @Test
   public void testLoveAll(){
     TennisGame tennisGame = new TennisGame();
     List<Player> playersList = new ArrayList<Player>();

@@ -12,7 +12,9 @@ public class TennisGame {
   public String viewScore(List<Player> playerList){
     if(playerList == null || playerList.size() != 2){
       return "To start the Game we need 2 players"
-;   }
+;   }else if(playerList.get(0) == null || playerList.get(1) == null){
+      return "Please, send a valid player";
+    }
     if(playerList.get(0).getScore() == playerList.get(1).getScore()){
       if(playerList.get(0).getScore() == 0){
         return "love all";
